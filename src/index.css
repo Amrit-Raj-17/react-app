@@ -1,0 +1,495 @@
+/* Define theme colors */
+:root {
+  --primary-color: #3498db; /* Blue */
+  --secondary-color: #2ecc71; /* Green */
+  --text-color: #000000;
+  --navbar-bg: #2c3e50; /* Dark Blue */
+  --footer-bg: #34495e; /* Dark Gray */
+  --button-bg: #e74c3c; /* Red */
+  --button-hover: #c0392b;
+  --background-color: #f4f4f4;
+}
+
+/* Global styles */
+html {
+  font-family: "Poppins", Arial, sans-serif;
+  color: var(--text-color);
+  background: var(--background-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Apply a full-screen background image */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(./small.png) fixed center center;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+  width: 100%;
+  background: #2c3e50;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 12%;
+}
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 6px 25px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.nav-links a:hover {
+  background: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+
+/* Footer Styling */
+.footer {
+  /* opacity: 0; */
+  width: 100%;
+  height: 12%;
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin-top: 80px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px; /* Slightly reduced spacing */
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  gap: 12px; /* Reduced from 15px */
+  font-size: 1.4rem; /* Slightly smaller icons */
+}
+
+/* Copyright Text */
+.footer-text {
+  font-size: 0.85rem; /* Reduced from 0.9rem */
+  opacity: 0.75; /* Slightly faded */
+}
+
+.social-icons a {
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #f39c12; /* Yellow Hover */
+}
+
+main {
+  flex-grow: 1;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  padding: 45px 16px 45px;
+  margin-top: 120px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  color: rgba(36, 2, 2, 0.854);
+  background-color: rgb(245, 239, 208, 0.9);
+  margin-bottom: 38%;
+}
+
+/* Styled Buttons for Home, Upload, Search, Match */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.button-container a {
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  background: var(--button-bg);
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.button-container a:hover {
+  background: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    width: 90%;
+    padding: 20px;
+    margin-top: 80px;
+  }
+
+  .navbar {
+    font-size: 1.2rem;
+    padding: 10px 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .button-container a {
+    font-size: 16px;
+    padding: 10px 18px;
+  }
+}
+
+/* SignUp Page Styling */
+
+.signup-container {
+  max-width: 400px;
+  margin: 0px 0px;
+  padding-left: 10px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.signup-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.signup-form input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.signup-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.signup-button:hover {
+  background: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+/* Responsive Styling */
+@media (max-width: 500px) {
+  .signup-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .signup-button {
+    font-size: 16px;
+  }
+}
+/* Login Page Styling */
+.login-container {
+  max-width: 400px;
+  margin: 0px 0px;
+  padding-left: 10px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.login-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.login-button:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Responsive Styling */
+@media (max-width: 500px) {
+  .login-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .login-button {
+    font-size: 16px;
+  }
+}
+.login-button {
+  /* display: inline-block; */
+  padding: 6px 12px;
+  /* margin-left: 5px; */
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background: #e74c3c;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.login-button:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* About Us Page Styling */
+.about-container {
+  max-width: 800px;
+}
+
+.about-container h1, 
+.about-container h2 {
+  color: #2c3e50;
+}
+
+.about-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about-container ul li {
+  font-size: 16px;
+  padding: 8px 0;
+}
+
+.about-container p {
+  font-size: 16px;
+  color: #555;
+}
+
+.upload-container {
+  max-width: 300px;
+  margin: 12px auto 0px; /* Adjusted margin to avoid navbar/footer overlap */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Heading */
+.upload-container h2 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+/* File Input */
+.upload-container input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+
+/* File Preview */
+.file-preview {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Upload Button */
+.upload-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  font-size: 18px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.upload-button:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .upload-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .upload-button {
+    font-size: 16px;
+  }
+}
+
+
+.search-jobs-container {
+  max-width: 400px;
+  margin: 16px auto 50px;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Heading */
+.search-jobs-container h2 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+/* Form */
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-form input, .search-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Button */
+.search-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.search-button:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Job Results */
+.job-results {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.job-results h3 {
+  color: #2c3e50;
+}
+
+.job-results ul {
+  list-style: none;
+  padding: 0;
+}
+
+.job-results li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .search-jobs-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .search-button {
+    font-size: 16px;
+  }
+}
+
